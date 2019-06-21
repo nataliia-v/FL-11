@@ -134,15 +134,23 @@
     }
 
     .heading ol a:hover{
+        position: relative;
+        padding-left: 9px;
         font-weight: bold;
         color: #ffb347;
         text-decoration: none;
     }
 
     .heading ol a:hover::before {
-        content: "i";
+        content: "";
         background-color: #ffb347;
-        margin-right: 3px;
+        padding-left: 3px;
+        width: 4px;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
     }
 
     .heading ol a {
