@@ -229,7 +229,7 @@
         color: #ffb347;
     }
 
-    .form-control:focus::-webkit-input-placeholder {
+    .form-control:focus::placeholder {
         color:transparent;
     }
 
