@@ -1,1 +1,167 @@
-// Write your styles here
+@mixin header_text {
+  .header_text {
+    padding-right: 800px;
+  }
+}
+
+@mixin indents {
+  .header, .section, .footer {
+    padding: 25px 195px;
+  }
+}
+
+@mixin landing-logo {
+  .landing-logo {
+    margin-bottom: 50px;
+
+    display: flex;
+    img {
+      margin-right: 15px;
+      width: 55px;
+      height: 55px;
+    }
+
+    p {
+      text-align: center;
+      span {
+        display: block;
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+@mixin header_text {
+  .header_heading {
+    margin-bottom: 100px;
+    line-height: 85px;
+  }
+  .header_heading::after {
+    display: block;
+    content: '';
+    width: 340px;
+    height: 27px;
+    background-color: red;
+    position: absolute;
+    top: 134px;
+    z-index: -1;
+  }
+  .header_text {
+    margin-bottom: 50px;
+    white-space: pre-line;
+  }
+}
+
+@mixin header_button {
+  .header_button {
+    width: 175px;
+    border: none;
+    font-size: large;
+    font-weight: bold;
+    color: white;
+    height: 60px;
+    text-align: center;
+    margin-bottom: 220px;
+    border-radius: 3px;
+  }
+}
+
+@mixin section {
+  .section {
+    padding-top: 60px;
+    position: relative;
+  }
+}
+
+@mixin section_text {
+  .section_text {
+    font-size: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+@mixin section_card_wrap {
+  .section_card_wrap {
+    display: flex;
+    justify-content: space-between;
+
+  }
+}
+
+@mixin section_card {
+  .section_card {
+    padding: 20px;
+    background-color: #3B3F50;
+    width: 500px;
+    margin-bottom: 170px;
+
+    .section_card_img {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .section_card_heading {
+      text-align: center;
+      font-size: 30px;
+      color: white;
+      margin-bottom: 35px;
+      position: relative;
+      z-index: 1;
+    }
+    .section_card_text {
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+    .section_card_heading::after {
+      position: absolute;
+      z-index: -1;
+      display: block;
+      content: '';
+      width: 200px;
+      height: 12px;
+      top: 21px;
+      right: 130px;
+    }
+  }
+}
+
+@mixin section_banner {
+
+  .section_banner{
+    display: flex;
+    width: 1100px;
+    justify-content: center;
+    margin: auto;
+    position: absolute;
+    background: linear-gradient(to right, #DB9F08, #97344E);
+    bottom: -85px;
+    right: 400px;
+    padding: 45px 125px;
+
+    .section_banner_text_wrap {
+      .section_banner_heading {
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        margin-right: 250px;
+      }
+    }
+  }
+}
+
+@mixin footer {
+
+    .footer-wrap {
+      display: flex;
+      justify-content: space-between;
+      .footer_text {
+        width: 300px;
+      }
+      .footer-cr {
+        padding-top: 30px;
+      }
+    }
+}
