@@ -64,12 +64,12 @@ body{
     .section_text::after {
       display: block;
       content: '';
-      width: 200px;
+      width: 220px;
       height: 27px;
       background-color: red;
       position: absolute;
       top: 34px;
-      right: 550px;
+      right: 530px;
       z-index: -1;
     }
 
