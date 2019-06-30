@@ -65,22 +65,27 @@ body{
     .section_card {
       background-color: #21232e;
 
-      .section_card_heading::after {
-        background-color: #2aabd2;
-      }
+      //.section_card_heading::after {
+      //  background-color: #2aabd2;
+      //}
 
     }
-    .section_text::after {
-      display: block;
-      content: '';
-      width: 220px;
-      height: 27px;
-      background-color: #2aabd2;
-      position: absolute;
-      top: 34px;
-      right: 530px;
-      z-index: -1;
-    }
+    .section_card_heading {display: inline-block};
+    .section_card_underline {width: 100%; background-color: #2aabd2;};
+
+
+
+    //.section_text::after {
+    //  display: block;
+    //  content: '';
+    //  width: 220px;
+    //  height: 27px;
+    //  background-color: #2aabd2;
+    //  position: absolute;
+    //  top: 34px;
+    //  right: 530px;
+    //  z-index: -1;
+    //}
 
   }
   @include section_banner;
@@ -103,9 +108,11 @@ body{
       margin-bottom: 0;
       background-color: map-get($map, buttonBg);
     }
+
   }
 
 }
+
 
 .footer {
   background-color: map-get($map, footerBg);

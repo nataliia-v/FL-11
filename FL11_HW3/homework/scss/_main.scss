@@ -115,16 +115,16 @@
       font-size: 20px;
       margin-bottom: 30px;
     }
-    .section_card_heading::after {
-      position: absolute;
-      z-index: -1;
-      display: block;
-      content: '';
-      width: 200px;
-      height: 12px;
-      top: 21px;
-      right: 130px;
-    }
+    //.section_card_heading::after {
+    //  position: absolute;
+    //  z-index: -1;
+    //  display: block;
+    //  content: '';
+    //  width: 200px;
+    //  height: 12px;
+    //  top: 21px;
+    //  right: 130px;
+    //}
   }
 }
 
