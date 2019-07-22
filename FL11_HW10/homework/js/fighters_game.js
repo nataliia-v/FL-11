@@ -75,6 +75,7 @@ const Fighter = function (obj) {
   }
 
 };
+
 const battle = function (battler1, battler2) {
 
   do {
@@ -108,8 +109,8 @@ const myFighter2 = new Fighter({name: 'Jim', damage: 10, hp: 100, agility: 40});
 // let health = myFighter.getHealth();
 // console.log(health); // 100
 //
-// let getAttak =  myFighter.attack(myFighter2);
-// console.log(getAttak);
+// let getAttack =  myFighter.attack(myFighter2);
+// console.log(getAttack);
 //
 // console.log(myFighter.logCombatHistory()); // Name: John, Wins: 0, Losses: 0
 //
