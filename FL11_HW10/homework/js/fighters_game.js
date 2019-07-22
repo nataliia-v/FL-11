@@ -2,7 +2,7 @@ const Fighter = function (obj) {
   let wins = 0;
   let losses = 0;
 
-  this.getName = function(){
+  this.getName = function () {
     return obj.name
   };
 
@@ -19,28 +19,31 @@ const Fighter = function (obj) {
   };
 
   this.attack = function (fighter) {
-   let probabilityOfSuccess = 100 - fighter.getAgility();
-   let randomNumber = Math.floor(Math.random() * 101);
+    let maxLength = 100;
+    let maxNumbRandom = 101;
+    let probabilityOfSuccess = maxLength - fighter.getAgility();
+    let randomNumber = Math.floor(Math.random() * maxNumbRandom);
 
     if (randomNumber > probabilityOfSuccess) {
-     fighter.hp = fighter.getHealth() - this.getDamage();
-     wins += 1;
-     return (this.getName() + ' make ' + this.getDamage() +  ' damage to ' + fighter.getName() + '. ' + fighter.getName() + ' hp : '  + fighter.hp);
-   } else {
+      fighter.hp = fighter.getHealth() - this.getDamage();
+      wins += 1;
+      return this.getName() + ' make ' + this.getDamage() + ' damage to '
+          + fighter.getName() + '. ' + fighter.getName() + ' hp : ' + fighter.hp;
+    } else {
       losses += 1;
-     return (`${this.getName()} attack Missed`);
-   }
-    
+      return `${ this.getName() } attack Missed`;
+    }
   };
-  
+
   this.logCombatHistory = function () {
-    return(`Name: ${this.getName()}, Wins: ${wins}, Losses: ${losses}`)
+    return `Name: ${ this.getName() }, Wins: ${ wins }, Losses: ${ losses }`
   };
-  
+
   this.heal = function (amountOfHealth) {
+    let maxHealth = 100;
     let health = this.getHealth() + amountOfHealth;
-    if (health > 100) {
-      health = 100;
+    if (health > maxHealth) {
+      health = maxHealth;
       return health;
     } else {
       return health;
@@ -59,11 +62,13 @@ const Fighter = function (obj) {
   };
 
   this.addWin = function () {
-    return wins += 1;
+    wins += 1;
+    return wins;
   };
-  
+
   this.addLoss = function () {
-    return losses += 1;
+    losses += 1;
+    return losses;
   }
 
 };
@@ -75,9 +80,7 @@ const battle = function (battler1, battler2) {
     // battler2 = 0;
   } while (battler1.getHealth !== 0 || battler2.getHealth !== 0) ;
 
-
   // return (getAttak1 + " && " + getAttak2) ;
-
 };
 
 
