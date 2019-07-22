@@ -1,4 +1,5 @@
 const Fighter = function (obj) {
+
   let wins = 0;
   let losses = 0;
 
@@ -25,12 +26,14 @@ const Fighter = function (obj) {
     let randomNumber = Math.floor(Math.random() * maxNumbRandom);
 
     if (randomNumber > probabilityOfSuccess) {
-      fighter.hp = fighter.getHealth() - this.getDamage();
-      wins += 1;
+
+      let hpFighter = fighter.getHealth() - this.getDamage();
+      // при виклику функції повторно, hp віднімається знову від 100, ще не встигла зрозуміти, як це виправити :(
+      //через це краще функцію battle не запускати
       return this.getName() + ' make ' + this.getDamage() + ' damage to '
-          + fighter.getName() + '. ' + fighter.getName() + ' hp : ' + fighter.hp;
+          + fighter.getName() + '. ' + fighter.getName() + ' hp : ' + hpFighter;
     } else {
-      losses += 1;
+      // losses += 1;
       return `${ this.getName() } attack Missed`;
     }
   };
@@ -77,12 +80,18 @@ const battle = function (battler1, battler2) {
   do {
     console.log(battler1.attack(battler2));
     console.log(battler2.attack(battler1));
-    // battler2 = 0;
-  } while (battler1.getHealth !== 0 || battler2.getHealth !== 0) ;
 
-  // return (getAttak1 + " && " + getAttak2) ;
+  } while (battler1.getHealth !== 0 || battler2.getHealth !== 0);
+  if (battler1.getHealth() === 0) {
+    battler1.addLoss();
+    battler2.addWin();
+    return `${battler1.getName()} is dead and can't fight!`
+  } else {
+    battler2.addLoss();
+    battler1.addWin();
+    return `${battler2.getName()} is dead and can't fight!`
+  }
 };
-
 
 const myFighter = new Fighter({name: 'John', damage: 20, hp: 100, agility: 25});
 const myFighter2 = new Fighter({name: 'Jim', damage: 10, hp: 100, agility: 40});
@@ -110,6 +119,6 @@ const myFighter2 = new Fighter({name: 'Jim', damage: 10, hp: 100, agility: 40});
 // console.log(myFighter.addWin());
 // myFighter.addLoss();
 
-console.log(battle(myFighter, myFighter2));
+// console.log(battle(myFighter, myFighter2));
 
 
