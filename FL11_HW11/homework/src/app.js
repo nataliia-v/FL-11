@@ -207,9 +207,3 @@ function valueFor() {
   numb2 = numb2 + 1;
   return numb2;
 }
-
-
-// function removeNote() {
-//   let wrap = document.querySelector('column');
-//   wrap.parentNode.removeChild(wrap);
-// }
