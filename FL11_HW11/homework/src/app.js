@@ -98,7 +98,6 @@ function createNote() {
       wrap.parentNode.removeChild(wrap);
     };
 
-
     iconBin.addEventListener('click', this.removeNote);
 
     this.editNote = function () {
